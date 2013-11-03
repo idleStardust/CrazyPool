@@ -1,4 +1,4 @@
-package elementos;
+package colecciones;
 
 /**
  * Interfaz encargada de serializar a cada objeto con un identificador único.

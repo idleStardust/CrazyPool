@@ -2,7 +2,9 @@ package elementos;
 
 import java.util.Observable;
 
-public class Hoyo extends Observable implements ISerializable
+import colecciones.ISerializable;
+
+public class CHoyo extends Observable implements ISerializable
 {
 	//ID
 	static int CantHoy;
@@ -12,7 +14,7 @@ public class Hoyo extends Observable implements ISerializable
 	
 	//Juego
 	
-	Hoyo()
+	CHoyo()
 	{
 		this._ID = "HOYO" + CantHoy;
 	}

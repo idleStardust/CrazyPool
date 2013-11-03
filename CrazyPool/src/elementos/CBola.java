@@ -3,6 +3,8 @@ package elementos;
 import java.util.Observable;
 import java.util.Observer;
 
+import colecciones.ISerializable;
+
 public abstract class CBola implements Observer, ISerializable
 {
 	//Juego

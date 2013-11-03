@@ -4,8 +4,14 @@ public class CHoyoBinario extends CHoyo
 {
 
 	@Override
-	public void recibirBola() 
+	public boolean recibeBola() 
 	{
+		boolean result = false;
+		if(this._Abierto)
+		{
+			result = true;
+		}
+		return result;
 	}
 
 }

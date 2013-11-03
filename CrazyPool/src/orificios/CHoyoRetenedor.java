@@ -4,8 +4,9 @@ public class CHoyoRetenedor extends CHoyo
 {
 
 	@Override
-	public void recibirBola() 
+	public boolean recibeBola() 
 	{
+		return true;
 	}
 
 }

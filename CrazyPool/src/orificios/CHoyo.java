@@ -14,6 +14,7 @@ public abstract class CHoyo extends Observable implements ISerializable
 	protected int _Serie;
 	
 	//Juego
+	protected boolean _Abierto;
 	
 	CHoyo()
 	{
@@ -21,6 +22,15 @@ public abstract class CHoyo extends Observable implements ISerializable
 		this.setID(++CantHoy);
 	}
 	
+	public void setAbierto(boolean pValor)
+	{
+		this._Abierto = pValor;
+	}
+	
+	public boolean isAbierto()
+	{
+		return this._Abierto;
+	}
 	
 	@Override
 	public void printID() 
@@ -56,5 +66,5 @@ public abstract class CHoyo extends Observable implements ISerializable
 		return this._Tipo;
 	}
 	
-	public abstract void recibirBola();
+	public abstract boolean recibeBola();
 }

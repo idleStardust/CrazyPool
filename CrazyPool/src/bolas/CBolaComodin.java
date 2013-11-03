@@ -1,4 +1,4 @@
-package elementos;
+package bolas;
 
 public class CBolaComodin extends CBola
 {
@@ -7,5 +7,10 @@ public class CBolaComodin extends CBola
 	public CBolaComodin()
 	{
 		super("BolaComod", ++_CantBolCom);
+	}
+
+	@Override
+	public void entrarEnHoyo() 
+	{
 	}
 }

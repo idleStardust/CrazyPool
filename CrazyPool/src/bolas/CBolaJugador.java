@@ -1,4 +1,4 @@
-package elementos;
+package bolas;
 
 public class CBolaJugador extends CBola
 {
@@ -7,5 +7,11 @@ public class CBolaJugador extends CBola
 	public CBolaJugador()
 	{
 		super("BolaJugad", ++_CantBolJug);
+	}
+
+	@Override
+	public void entrarEnHoyo() 
+	{
+		
 	}
 }

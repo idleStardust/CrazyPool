@@ -1,4 +1,4 @@
-package elementos;
+package bolas;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -20,6 +20,16 @@ public abstract class CBola implements Observer, ISerializable
 	{
 		this._Serie = pSerie;
 		this._ID = pTipo + pSerie;
+	}
+	
+	public boolean isEnJuego()
+	{
+		return this._EnJuego;
+	}
+	
+	public void setEnJuego(boolean pValor)
+	{
+		this._EnJuego = pValor;
 	}
 	
 	@Override
@@ -57,4 +67,6 @@ public abstract class CBola implements Observer, ISerializable
 	{
 		
 	}
+	
+	public abstract void entrarEnHoyo();
 }

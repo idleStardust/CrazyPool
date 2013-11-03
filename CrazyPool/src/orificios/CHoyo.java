@@ -1,13 +1,14 @@
-package elementos;
+package orificios;
 
 import java.util.Observable;
 
 import colecciones.ISerializable;
 
-public class CHoyo extends Observable implements ISerializable
+public abstract class CHoyo extends Observable implements ISerializable
 {
 	//ID
 	static int CantHoy;
+	
 	protected String _ID;
 	protected String _Tipo;
 	protected int _Serie;
@@ -16,7 +17,8 @@ public class CHoyo extends Observable implements ISerializable
 	
 	CHoyo()
 	{
-		this._ID = "HOYO" + CantHoy;
+		this._Tipo = "HOYO";
+		this.setID(++CantHoy);
 	}
 	
 	
@@ -53,4 +55,6 @@ public class CHoyo extends Observable implements ISerializable
 	{
 		return this._Tipo;
 	}
+	
+	public abstract void recibirBola();
 }

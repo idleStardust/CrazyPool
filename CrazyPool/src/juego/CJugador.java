@@ -14,16 +14,11 @@ public class CJugador
 	{
 		this._Numero = pNumero;
 		
-		//Generar Bola Comodin
-		this.addBola( new CBolaComodin() );
-		
 		//Generar Bola de Jugador
 		this.addBola( new CBolaJugador() );
 		
 		//Generar Bolas De Nivel
-		this.generarBolas( 3, 1);
-		this.generarBolas( 3, 2);
-		this.generarBolas( 3, 3);
+		this.generarBolas( 3 );
 	}
 	
 	public int getJugador()
@@ -61,9 +56,24 @@ public class CJugador
 		return this._ListaBolas.size();
 	}
 	
-	public void generarBolas(int pCantidad, int pNivel)
+	public void generarBolas(int pCantidad)
 	{
 		for(int x = 0; x < pCantidad; x++)
-			this.addBola(new CBolaNivel(pNivel));
+		{
+			this.addBola(new CBolaNivel( 1 ));
+			this.addBola(new CBolaNivel( 2 ));
+			this.addBola(new CBolaNivel( 3 ));
+		}
+	}
+	
+	public CBola buscarBola(String pID)
+	{
+		CBola result = null;
+		for(CBola x: this._ListaBolas)
+		{
+			if( x.getID().equalsIgnoreCase(pID) )
+				result = x;
+		}
+		return result;
 	}
 }

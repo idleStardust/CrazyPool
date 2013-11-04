@@ -4,33 +4,30 @@ public class CTiempo extends Thread
 {
 	private int _Minutos;
 	private int _Segundos;
+	private boolean _Detenido;
+	private boolean _Pausado;
 	
-	CTiempo(int pMinutos)
+	CTiempo(int pSegundos)
 	{
-		this._Minutos = pMinutos;
-		this._Segundos = 0;
-		this.run();
+		this._Segundos = pSegundos;
+		this._Minutos = pSegundos/60;
+		this._Detenido = false;
+		this._Pausado = false;
 	}
 	
 	@Override
 	public void run()
 	{
-		for(int x = this._Minutos; x >= 0; x--)
+		while(_Segundos >= 0 && !(this._Detenido))
 		{
-			for(int y = _Segundos; y >= 0; y--)
-			{
-				System.out.println("Minutos " + this._Minutos + " Segundos: " + this._Segundos);
-				this._Segundos--;
-				try 
-				{
-					Thread.sleep(1000);
-				} catch (InterruptedException e) 
-				{
-					e.printStackTrace();
-				}
+			System.out.println("Segundos: " + this._Segundos);
+			try {
+				Thread.sleep(1000);
+			} 
+			catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-			this._Segundos = 59;
-			this._Minutos--;
+			this._Segundos--;
 		}
 	}
 	
@@ -42,5 +39,15 @@ public class CTiempo extends Thread
 	public int getSegundos()
 	{
 		return this._Segundos;
+	}
+	
+	public synchronized void detener()
+	{
+		this._Detenido = true;
+	}
+	
+	public synchronized void continuar()
+	{
+		this._Pausado = false;
 	}
 }

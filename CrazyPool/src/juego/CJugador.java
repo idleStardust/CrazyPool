@@ -15,7 +15,7 @@ public class CJugador
 		this._Numero = pNumero;
 		
 		//Generar Bola de Jugador
-		this.addBola( new CBolaJugador() );
+		this.addBola( new CBolaJugador(pNumero) );
 		
 		//Generar Bolas De Nivel
 		this.generarBolas( 3 );
@@ -60,9 +60,9 @@ public class CJugador
 	{
 		for(int x = 0; x < pCantidad; x++)
 		{
-			this.addBola(new CBolaNivel( 1 ));
-			this.addBola(new CBolaNivel( 2 ));
-			this.addBola(new CBolaNivel( 3 ));
+			this.addBola(new CBolaNivel( 1, this._Numero));
+			this.addBola(new CBolaNivel( 2, this._Numero ));
+			this.addBola(new CBolaNivel( 3, this._Numero ));
 		}
 	}
 	
@@ -70,10 +70,11 @@ public class CJugador
 	{
 		CBola result = null;
 		for(CBola x: this._ListaBolas)
-		{
 			if( x.getID().equalsIgnoreCase(pID) )
+			{
 				result = x;
-		}
+				break;
+			}
 		return result;
 	}
 }

@@ -2,11 +2,9 @@ package bolas;
 
 public class CBolaComodin extends CBola
 {
-	static int _CantBolCom;
-	
 	public CBolaComodin()
 	{
-		super("BolaComod", ++_CantBolCom);
+		super("BolaComodin", 0, 0);
 	}
 
 	@Override

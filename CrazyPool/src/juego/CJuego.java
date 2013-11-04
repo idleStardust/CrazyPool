@@ -2,8 +2,7 @@ package juego;
 
 import java.util.ArrayList;
 
-import bolas.CBolaComodin;
-import bolas.CBolaJugador;
+import bolas.*;
 import orificios.*;
 
 public class CJuego 
@@ -36,6 +35,10 @@ public class CJuego
 	}
 	
 	
+	/**
+	 * Retorna la forma del tablero de Juego, R es rectangular y C es circular.
+	 * @return Forma {@link Character}
+	 */
 	public char getForma()
 	{
 		return this._Forma;
@@ -52,6 +55,17 @@ public class CJuego
 	{
 		return this._Tiempo.getSegundos();
 	}
+	
+	public int getPuntosJugador1()
+	{
+		return this._Jugador1.getPuntos();
+	}
+	
+	public int getPuntosJugador2()
+	{
+		return this._Jugador2.getPuntos();
+	}
+	
 	public void crearHoyos()
 	{
 		

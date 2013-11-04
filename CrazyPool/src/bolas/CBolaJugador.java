@@ -2,11 +2,10 @@ package bolas;
 
 public class CBolaJugador extends CBola
 {
-	static int _CantBolJug;
-	
-	public CBolaJugador()
+	public CBolaJugador(int pJugador)
 	{
-		super("BolaJugad", ++_CantBolJug);
+		super("BolaJugador", pJugador, pJugador);
+		this._Jugador = pJugador; 
 	}
 
 	@Override

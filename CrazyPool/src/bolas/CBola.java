@@ -9,6 +9,7 @@ public abstract class CBola implements Observer, ISerializable
 {
 	//Juego
 	protected boolean _EnJuego;
+	protected int _Jugador;
 	
 	//ID
 	protected String _ID;
@@ -16,10 +17,11 @@ public abstract class CBola implements Observer, ISerializable
 	protected int _Serie;
 	
 	
-	public CBola(String pTipo, int pSerie)
+	public CBola(String pTipo, int pSerie, int pJugador)
 	{
 		this._Serie = pSerie;
 		this._ID = pTipo + pSerie;
+		this._Jugador = pJugador;
 	}
 	
 	public boolean isEnJuego()

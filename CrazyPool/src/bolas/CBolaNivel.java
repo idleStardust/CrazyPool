@@ -8,12 +8,12 @@ public class CBolaNivel extends CBola
 	protected String _Tipo = "HOYO";
 	
 	//Juego
-	protected int _Numero;
+	protected int _Nivel;
 	
-	public CBolaNivel(int pNum)
+	public CBolaNivel(int pNivel, int pJugador)
 	{
-		super("BolaNivel", ++_CantBolNiv);
-		this._Numero = pNum;
+		super("BolaNivel", ++_CantBolNiv, pJugador);
+		this._Nivel = pNivel;
 	}
 
 	@Override

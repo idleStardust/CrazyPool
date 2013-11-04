@@ -2,7 +2,12 @@ package orificios;
 
 public class CHoyoBinario extends CHoyo
 {
-
+	private static int _CantHoyoBinario;
+	
+	public CHoyoBinario()
+	{
+		super("HoyoBin", ++_CantHoyoBinario);
+	}
 	@Override
 	public boolean recibeBola() 
 	{

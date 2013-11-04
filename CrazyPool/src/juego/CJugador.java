@@ -8,17 +8,20 @@ public class CJugador
 {
 	private int _Numero;
 	private int _Puntos;
-	private ArrayList<CBola> _ListaBolas;
-	
+	private int _NivelAcabado;
+	private ArrayList<CBolaNivel> _ListaBolas;
+	private CBolaJugador _BolaJugador;
 	CJugador(int pNumero)
 	{
 		this._Numero = pNumero;
 		
 		//Generar Bola de Jugador
-		this.addBola( new CBolaJugador(pNumero) );
+		this._BolaJugador = new CBolaJugador(pNumero);
 		
 		//Generar Bolas De Nivel
 		this.generarBolas( 3 );
+		
+		this._NivelAcabado = 1;
 	}
 	
 	public int getJugador()
@@ -31,17 +34,27 @@ public class CJugador
 		return this._Puntos;
 	}
 	
+	public int getNivelAcabado()
+	{
+		return this._NivelAcabado;
+	}
+	
+	public CBolaJugador getBolaJugador()
+	{
+		return this._BolaJugador;
+	}
+	
 	public void addPuntos(int pPuntos)
 	{
 		this._Puntos += pPuntos;
 	}
 	
-	public ArrayList<CBola> getBolas()
+	public ArrayList<CBolaNivel> getBolas()
 	{
 		return this._ListaBolas;
 	}
 	
-	public void addBola(CBola pBola)
+	public void addBola(CBolaNivel pBola)
 	{
 		this._ListaBolas.add(pBola);
 	}
@@ -72,9 +85,30 @@ public class CJugador
 		for(CBola x: this._ListaBolas)
 			if( x.getID().equalsIgnoreCase(pID) )
 			{
+				this._NivelAcabado++ ;
 				result = x;
 				break;
 			}
+		return result;
+	}
+	
+	public void revisarNivelAcabado()
+	{
+		this.bolasMenores(this._NivelAcabado, this._ListaBolas);
+	}
+	
+
+	public boolean bolasMenores(int pNivel, ArrayList<CBolaNivel> pLista)
+	{
+		boolean result = false;
+		for(CBolaNivel x: pLista)
+		{
+			if( x.getNivel() < pNivel )
+			{
+				result = true;
+				break;
+			}
+		}
 		return result;
 	}
 }

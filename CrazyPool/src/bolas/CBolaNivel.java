@@ -1,11 +1,12 @@
 package bolas;
 
+import java.util.ArrayList;
+
 public class CBolaNivel extends CBola
 {
 
 	//ID
 	static int _CantBolNiv;
-	protected String _Tipo = "HOYO";
 	
 	//Juego
 	protected int _Nivel;
@@ -15,7 +16,12 @@ public class CBolaNivel extends CBola
 		super("BolaNivel", ++_CantBolNiv, pJugador);
 		this._Nivel = pNivel;
 	}
-
+	
+	public int getNivel()
+	{
+		return this._Nivel;
+	}
+	
 	@Override
 	public void entrarEnHoyo() 
 	{
